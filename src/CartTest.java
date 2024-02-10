@@ -45,18 +45,25 @@ public class CartTest {
     driver.findElement(By.cssSelector("#js--entry-popup .ion-close-round")).click();
  
     // Wait for the entry popup to disappear
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("js--entry-popup")));
 
     driver.findElement(By.id("js--search")).click();
     driver.findElement(By.id("js--search")).sendKeys("Net Pencil Bag");
     driver.findElement(By.id("js--search")).sendKeys(Keys.ENTER);
+    
+    
+//    WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+//    WebElement cartButton = wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".cart-btn")));
+//    cartButton.click();
+
+    
     {
       WebElement element = driver.findElement(By.cssSelector(".w-100"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
-    js.executeScript("window.scrollTo(0,30)");
+    js.executeScript("window.scrollTo(0,500)");
     {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
@@ -64,10 +71,8 @@ public class CartTest {
     }
     
     //WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-    WebElement cartButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".cart-btn")));
-    cartButton.click();
-
     
+    js.executeScript("window.scrollTo(0,500)");
     driver.findElement(By.cssSelector(".cart-btn")).click();
     driver.findElement(By.id("cart-icon")).click();
     driver.findElement(By.cssSelector(".icon-trash")).click();
