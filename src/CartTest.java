@@ -63,7 +63,7 @@ public class CartTest {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
-    js.executeScript("window.scrollTo(0,500)");
+    js.executeScript("window.scrollTo(0,30)");
     {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
@@ -72,7 +72,7 @@ public class CartTest {
     
     //WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
     
-    js.executeScript("window.scrollTo(0,500)");
+    
     driver.findElement(By.cssSelector(".cart-btn")).click();
     driver.findElement(By.id("cart-icon")).click();
     driver.findElement(By.cssSelector(".icon-trash")).click();
